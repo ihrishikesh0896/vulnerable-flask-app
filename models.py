@@ -13,7 +13,7 @@ class User(db.Model):
     def __init__(self, username, password):
         self.username = username
         self.password = generate_password_hash(password)
-        self.api_key = 'uk_test_123456789'
+        Replaced_5499b698 = 'Replaced_c86aec0f'
 
     def to_dict(self):
         return {
