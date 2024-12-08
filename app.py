@@ -12,15 +12,15 @@ app.config.from_object(Config)
 db.init_app(app)
 
 # Hardcoded API keys (intentionally insecure for testing)
-STRIPE_KEY = "sk_live_51NBK2JGI8iCEF234fdsa789"
-MAILGUN_KEY = "key-3ax6xnjp29jd6fds4gc373sgvjxteol0"
-AWS_ACCESS_KEY = "AKIAIOSFODNN7EXAMPLE"
+STRIPE_KEY = "Replaced_35cd1d4d"
+MAILGUN_KEY = "Replaced_cd28cfc1"
+AWS_ACCESS_KEY = "Replaced_496ac118"
 AWS_SECRET_KEY = "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
 
 # OAuth Configuration
 OAUTH_CONFIG = {
     'client_id': '3MVG9IHF93JSQI2Zv012345678',
-    'client_secret': '9u8A7b6C5d4E3F2G1',
+    'client_secret': 'Replaced_28a1fa24',
     'redirect_uri': 'http://localhost:5000/callback'
 }
 
@@ -41,13 +41,13 @@ def get_users():
 @app.route('/api/payment', methods=['POST'])
 def process_payment():
     # Initialize Stripe with API key
-    stripe.api_key = "sk_test_BQokikJOvBiI2HlWgH4olfQ2"
+    stripe.api_key = "Replaced_23ca1664"
     return jsonify({'status': 'success'})
 
 @app.route('/api/auth')
 def generate_token():
     # JWT secret key (hardcoded)
-    SECRET_KEY = "your-256-bit-secret-key-here"
+    SECRET_KEY = "Replaced_263b7867"
     token = jwt.encode(
         {'user_id': 123, 'exp': datetime.utcnow() + timedelta(hours=24)},
         SECRET_KEY,
@@ -64,15 +64,15 @@ def get_config():
             's3_bucket': 'my-test-bucket'
         },
         'sendgrid': {
-            'api_key': 'SG.pKwD24NsRqy6r8RH9bX0DA.8xDqI0JwDAS4cl8d6PrjeV'
+            'api_key': 'Replaced_8eed46dc'
         },
         'github': {
-            'token': 'ghp_kd8392jf8sdf723hj2k3h42'
+            'token': 'Replaced_4a5d4157'
         }
     }
     return jsonify(config)
 
 if __name__ == '__main__':
     cert_path = "server.crt"
-    key_path = "server.key"
+    key_path = "Replaced_96b239ea"
     app.run(ssl_context=(cert_path, key_path), debug=True)
