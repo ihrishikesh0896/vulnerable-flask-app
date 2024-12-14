@@ -51,7 +51,7 @@ pipeline {
                             ls -la
                             git branch --show-current
                             echo "Running sensitive data scan..."
-                            /var/SecretSanitizer/env/bin/python3 /var/SecretSanitizer/main.py -repo-path ${WORKSPACE}
+                            /var/env/bin/python3 /var/SecretSanitizer/main.py -repo-path ${WORKSPACE}
                         """,
                         returnStatus: true // Capture the exit status
                     )
