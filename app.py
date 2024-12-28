@@ -73,6 +73,6 @@ def get_config():
     return jsonify(config)
 
 if __name__ == '__main__':
-    cert_path = "server.crt"
-    key_path = "server.key"
+    # cert_path = "server.crt"
+    # key_path = "server.key"
     app.run(ssl_context=(cert_path, key_path), debug=True)
